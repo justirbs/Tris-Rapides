@@ -26,7 +26,7 @@ void InitTab(int* tab, int n){
   int i; //iterrateur de boucle
   srand(time(NULL));
   for(i=0; i<n; i++){
-    tab[i]=(rand()%100);
+    tab[i]= rand()%100;
   }
 }
 
