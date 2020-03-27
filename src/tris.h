@@ -16,6 +16,7 @@
 
  // Inclusion des entêtes de librairies
  #include "tableau.h"
+ 
 
 
  /**
@@ -28,7 +29,7 @@
   *\brief permet de trier un tableau par sélection
   *
   *
-  *\param tab le tableau qui à trier
+  *\param tab le tableau à trier
   *\param n la taille du tableau
   *
   */
@@ -44,27 +45,129 @@ void triSelection(int* tab, int n);
  *\brief permet de trier un tableau à bulle
  *
  *
- *\param tab le tableau qui à trier
+ *\param tab le tableau à trier
  *\param n la taille du tableau
  *
  */
  void triBulle(int* tab, int n);
 
- /**
-  *\fn void triInsertion(int* tab, int n)
-  *
-  *\author Justine Ribas <ribasjusti@eisti.eu>
-  *\version 0.1
-  *\date 19 février 2020
-  *
-  *\brief permet de trier un tableau par insertion
-  *
-  *
-  *\param tab le tableau qui à trier
-  *\param n la taille du tableau
-  *
-  */
+/**
+ *\fn void triInsertion(int* tab, int n)
+ *
+ *\author Justine Ribas <ribasjusti@eisti.eu>
+ *\version 0.1
+ *\date 19 février 2020
+ *
+ *\brief permet de trier un tableau par insertion
+ *
+ *
+ *\param tab le tableau  à trier
+ *\param n la taille du tableau
+ *
+ */
 void triInsertion(int* tab, int n);
+
+/**
+ *\fn void triRapide(int* tab, int n)
+ *
+ *\author Justine Ribas <ribasjusti@eisti.eu>
+ *\version 0.1
+ *\date 18 mars 2020
+ *
+ *\brief permet de trier un tableau par tri rapide
+ *
+ *
+ *\param tab le tableau à trier
+ *\param n la taille du tableau
+ *
+ */
+ void triRapide(int* tab, int n);
+
+/**
+ *\fn void quickSort(int* tab, int debut, int fin)
+ *
+ *\author Justine Ribas <ribasjusti@eisti.eu>
+ *\version 0.1
+ *\date 22 mars 2020
+ *
+ *\brief fonction récursive du tri rapide
+ *
+ *
+ *\param tab le tableau à trier
+ *\param debut première case du tableau à trier
+ *\param fin dernière case du tableau à trier
+ *
+ */
+void quickSort(int* tab, int debut, int fin);
+
+/**
+ *\fn int partitionner(int* tab, int debut, int fin)
+ *
+ *\author Justine Ribas <ribasjusti@eisti.eu>
+ *\version 0.1
+ *\date 22 mars 2020
+ *
+ *\brief permet de partitionner un tableau en deux, de part et d'autre du tableau
+ *
+ *
+ *\param tab le tableau à partitionner
+ *\param debut première case du tableau à partitionner
+ *\param fin dernière case du tableau à partitionner
+ *\return l'indce du pivot
+ *
+ */
+int partitionner(int* tab, int debut, int fin);
+
+/**
+ *\fn void triFusion(int* tab, int n)
+ *
+ *\author Justine Ribas <ribasjusti@eisti.eu>
+ *\version 0.1
+ *\date 22 mars 2020
+ *
+ *\brief permet de trier un tableau par fusion
+ *
+ *
+ *\param tab le tableau à trier
+ *\param n la taille du tableau
+ *
+ */
+void triFusion(int* tab, int n);
+
+/**
+ *\fn void mergeSort(int* tab, int debut, int fin)
+ *
+ *\author Justine Ribas <ribasjusti@eisti.eu>
+ *\version 0.1
+ *\date 22 mars 2020
+ *
+ *\brief fonction récursive du tri fusion
+ *
+ *
+ *\param tab le tableau à trier
+ *\param debut première case du tableau à trier
+ *\param fin dernière case du tableau à trier
+ *
+ */
+void mergeSort(int* tab, int debut, int fin);
+
+/**
+ *\fn void fusionner(int* tab, int debut, int fin, int m)
+ *
+ *\author Justine Ribas <ribasjusti@eisti.eu>
+ *\version 0.1
+ *\date 22 mars 2020
+ *
+ *\brief permet de fusionner un tableau en deux, de part et d'autre du tableau
+ *
+ *
+ *\param tab le tableau à partitionner
+ *\param debut première case du tableau à fusionner
+ *\param fin dernière case du tableau à fusionner
+ *\param m l'indice du milieu
+ *
+ */
+void fusionner(int* tab, int debut, int fin, int m);
 
 /**
  *\fn void  echanger(int* tab, int indice1, int indice2)
@@ -82,5 +185,7 @@ void triInsertion(int* tab, int n);
  *
  */
 void  echanger(int* tab, int indice1, int indice2);
+
+
 
 #endif

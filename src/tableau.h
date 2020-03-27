@@ -12,6 +12,7 @@
  // Inclusion des entêtes de librairies
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include "saisie.h"
 
 /**

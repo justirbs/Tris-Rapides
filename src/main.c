@@ -34,6 +34,8 @@ int main(void){
   triSelection(tab, n);
   triBulle(tab, n);
   triInsertion(tab, n);
+  triRapide(tab, n);
+  triFusion(tab, n);
   free(tab);
   return(0);
 }

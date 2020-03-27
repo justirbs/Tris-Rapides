@@ -7,7 +7,6 @@
 */
 
 #include"tableau.h"
-#include <time.h>
 
 /*Question 1*/
 int* creerTabEntier1D(int n)
