@@ -16,7 +16,7 @@
 
  // Inclusion des entêtes de librairies
  #include "tableau.h"
- 
+
 
 
  /**
@@ -135,7 +135,7 @@ int partitionner(int* tab, int debut, int fin);
 void triFusion(int* tab, int n);
 
 /**
- *\fn void mergeSort(int* tab, int debut, int fin)
+ *\fn void mergeSort(int* tab, int n)
  *
  *\author Justine Ribas <ribasjusti@eisti.eu>
  *\version 0.1
@@ -145,14 +145,13 @@ void triFusion(int* tab, int n);
  *
  *
  *\param tab le tableau à trier
- *\param debut première case du tableau à trier
- *\param fin dernière case du tableau à trier
+ *\param n la taille du tableau
  *
  */
-void mergeSort(int* tab, int debut, int fin);
+void mergeSort(int* tab, int n);
 
 /**
- *\fn void fusionner(int* tab, int debut, int fin, int m)
+ *\fn void fusionner(int* tab, int* tab1, int n1, int* tab2, int n2)
  *
  *\author Justine Ribas <ribasjusti@eisti.eu>
  *\version 0.1
@@ -161,13 +160,8 @@ void mergeSort(int* tab, int debut, int fin);
  *\brief permet de fusionner un tableau en deux, de part et d'autre du tableau
  *
  *
- *\param tab le tableau à partitionner
- *\param debut première case du tableau à fusionner
- *\param fin dernière case du tableau à fusionner
- *\param m l'indice du milieu
- *
  */
-void fusionner(int* tab, int debut, int fin, int m);
+void fusionner(int* tab, int* tab1, int n1, int* tab2, int n2);
 
 /**
  *\fn void  echanger(int* tab, int indice1, int indice2)

@@ -81,6 +81,8 @@ void InitTab(int* tab, int n);
  */
 void CopierTab(int* tab1, int* tab2, int n);
 
+int* copierSousTableau(int* tab, int debut, int fin);
+
 
 
 

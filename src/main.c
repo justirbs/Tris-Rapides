@@ -25,7 +25,7 @@ int main(void){
   printf("Quelle est la taille du tableau ?\n");
   do {
     n=saisirEntier();
-  } while (n<=0);
+  } while (n<=1);
   tab=creerTabEntier1D(n);
   InitTab(tab, n);
   system("clear");

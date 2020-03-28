@@ -45,3 +45,16 @@ void CopierTab(int* tab1, int* tab2, int n){
     tab2[i]=tab1[i];
   }
 }
+
+int* copierSousTableau(int* tab, int debut, int fin){
+  int *tabCopie; //tableau qui contiendra la copie
+  int i; //parcours de l'indice debut à l'indice fin
+
+  tabCopie = creerTabEntier1D(fin-debut+1);
+
+  for(i = debut ; i <= fin ; i++){
+    tabCopie[i-debut] = tab[i];
+  }
+
+  return(tabCopie);
+}

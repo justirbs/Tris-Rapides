@@ -152,7 +152,7 @@ void triFusion(int* tab, int n){
   tab2=creerTabEntier1D(n);
   CopierTab(tab, tab2, n);
   t1=clock();
-  mergeSort(tab, 0, n-1);
+  mergeSort(tab2, n);
   t2=clock();
   printf("\n\nTri fusion :\n");
   afficherTab(tab2, n);
@@ -160,56 +160,54 @@ void triFusion(int* tab, int n){
   free(tab2);
 }
 
-void mergeSort(int* tab, int debut, int fin){
-  int m; //le milieu du tableau
-  if(debut<fin){
-    m=debut+(fin-1)/2;
-    printf("\n\n");
-    afficherTab(tab, fin-debut);
-    mergeSort(tab, debut, m);
-    mergeSort(tab, m+1, fin);
-    fusionner(tab, debut, fin, m);
+void mergeSort(int* tab, int n){
+  if(n>1){
+    int *tab1; //le tableau de gauche
+    int *tab2; //le tableau de droite
+    int m; //la case du milieu (debut du tab2)
+
+    m = n/2;
+    tab1 = copierSousTableau(tab, 0, m-1);
+    tab2 = copierSousTableau(tab, m, n-1);
+
+    mergeSort(tab1, m);
+    mergeSort(tab2, n-m);
+
+    fusionner(tab, tab1, m, tab2, n-m);
+
+    free(tab1);
+    free(tab2);
   }
 }
 
-void fusionner(int* tab, int debut, int fin, int m){
-  int i; //iterrateur de boucle
-  int j; //iterrateur de boucle
-  int k; //iterrateur de boucle
-  int* tab1; //tableau de gauche
-  int* tab2; //tableau de droite
-  int n1; //taille du tableau de gauche
-  int n2; //taille du tableau de droite
-  n1=m-debut+1;
-  n2=fin-m;
-  tab1=creerTabEntier1D(n1);
-  tab2=creerTabEntier1D(n2);
-  for(i=0; i<n1; i++){
-    tab1[i]=tab[debut+i];
-  }
-  for(i=0; i<n2; i++){
-    tab2[i]=tab[m+1+i];
-  }
-  i=0;
-  j=0;
-  k=1;
+void fusionner(int* tab, int* tab1, int n1, int* tab2, int n2){
+  int i; //parcours les indices du premier tableau
+  int j; //parcours les indices du deuxieme tableau
+  int k; //parcours les indices du tableau final7
+
+  i = 0;
+  j = 0;
+  k = 0;
+
   while(i<n1 && j<n2){
-    if(tab1[i]<=tab2[j]){
-      tab[k]=tab1[i];
+    if(tab1[i] < tab2[j]){
+      tab[k] = tab1[i];
       i++;
-    } else {
-      tab[k]=tab2[j];
+    }
+    else{
+      tab[k] = tab2[j];
       j++;
     }
     k++;
   }
+
   while(i<n1){
-    tab[k]=tab1[i];
+    tab[k] = tab1[i];
     i++;
     k++;
   }
   while(j<n2){
-    tab[k]=tab2[j];
+    tab[k] = tab2[j];
     j++;
     k++;
   }
