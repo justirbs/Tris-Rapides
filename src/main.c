@@ -14,12 +14,14 @@
  #include "tris.h"
  #include "tableau.h"
  #include "saisie.h"
+ #include "fichier.h"
  #include <stdio.h>
  #include <stdlib.h>
 
 /*Question 6*/
 
 int main(void){
+  FILE* fichier;
   int* tab; //tableau d'entiers
   int n; //la taille des tableaux
   printf("Quelle est la taille du tableau ?\n");
@@ -31,12 +33,15 @@ int main(void){
   system("clear");
   printf("Voici votre tableau : \n");
   afficherTab(tab, n);
-  triSelection(tab, n);
-  triBulle(tab, n);
-  triInsertion(tab, n);
-  triRapide(tab, n);
-  triFusion(tab, n);
-  trisShell(tab, n);
+
+  fichier = chargerFichier("times.csv", "w");
+  triSelection(tab, n, fichier);
+  triBulle(tab, n, fichier);
+  triInsertion(tab, n, fichier);
+  triRapide(tab, n, fichier);
+  triFusion(tab, n, fichier);
+  trisShell(tab, n, fichier);
+  fclose(fichier);
   free(tab);
   return(0);
 }

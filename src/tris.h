@@ -16,11 +16,10 @@
 
  // Inclusion des entêtes de librairies
  #include "tableau.h"
-
-
+ #include "fichier.h"
 
  /**
-  *\fn void triSelection(int* tab, int n)
+  *\fn void triSelection(int* tab, int n, FILE* fichier)
   *
   *\author Justine Ribas <ribasjusti@eisti.eu>
   *\version 0.1
@@ -33,10 +32,10 @@
   *\param n la taille du tableau
   *
   */
-void triSelection(int* tab, int n);
+void triSelection(int* tab, int n, FILE* fichier);
 
 /**
- *\fn void triBulle(int* tab, int n)
+ *\fn void triBulle(int* tab, int n, FILE* fichier)
  *
  *\author Justine Ribas <ribasjusti@eisti.eu>
  *\version 0.1
@@ -49,10 +48,10 @@ void triSelection(int* tab, int n);
  *\param n la taille du tableau
  *
  */
- void triBulle(int* tab, int n);
+ void triBulle(int* tab, int n, FILE* fichier);
 
 /**
- *\fn void triInsertion(int* tab, int n)
+ *\fn void triInsertion(int* tab, int n, FILE* fichier)
  *
  *\author Justine Ribas <ribasjusti@eisti.eu>
  *\version 0.1
@@ -65,10 +64,10 @@ void triSelection(int* tab, int n);
  *\param n la taille du tableau
  *
  */
-void triInsertion(int* tab, int n);
+void triInsertion(int* tab, int n, FILE* fichier);
 
 /**
- *\fn void triRapide(int* tab, int n)
+ *\fn void triRapide(int* tab, int n, FILE* fichier)
  *
  *\author Justine Ribas <ribasjusti@eisti.eu>
  *\version 0.1
@@ -81,7 +80,7 @@ void triInsertion(int* tab, int n);
  *\param n la taille du tableau
  *
  */
- void triRapide(int* tab, int n);
+ void triRapide(int* tab, int n, FILE* fichier);
 
 /**
  *\fn void quickSort(int* tab, int debut, int fin)
@@ -119,7 +118,7 @@ void quickSort(int* tab, int debut, int fin);
 int partitionner(int* tab, int debut, int fin);
 
 /**
- *\fn void triFusion(int* tab, int n)
+ *\fn void triFusion(int* tab, int n, FILE* fichier)
  *
  *\author Justine Ribas <ribasjusti@eisti.eu>
  *\version 0.1
@@ -132,7 +131,7 @@ int partitionner(int* tab, int debut, int fin);
  *\param n la taille du tableau
  *
  */
-void triFusion(int* tab, int n);
+void triFusion(int* tab, int n, FILE* fichier);
 
 /**
  *\fn void mergeSort(int* tab, int n)
@@ -181,7 +180,7 @@ void fusionner(int* tab, int* tab1, int n1, int* tab2, int n2);
 void  echanger(int* tab, int indice1, int indice2);
 
 
-void trisShell(int* tab, int n);
+void trisShell(int* tab, int n, FILE* fichier);
 
 
 

@@ -25,7 +25,7 @@ void  echanger(int* tab, int indice1, int indice2){
 
 /*Question 5*/
 
-void triSelection(int* tab, int n){
+void triSelection(int* tab, int n, FILE* fichier){
   int* tab2; //une copie du tableau
   int i; //iterrateur de boucle
   int j; //iterrateur de boucle
@@ -50,10 +50,11 @@ void triSelection(int* tab, int n){
   printf("\n\nTri par sélection :\n");
   afficherTab(tab2, n);
   printf("temps d'execution : %f μs\n", ((float)(t2-t1)/CLOCKS_PER_SEC)*1000000);
+  fprintf(fichier, "Tri par sélection;%f μs\n", ((float)(t2-t1)/CLOCKS_PER_SEC)*1000000);
   free(tab2);
 }
 
-void triBulle(int* tab, int n){
+void triBulle(int* tab, int n, FILE* fichier){
   int* tab2; //une copie du tableau
   int i; //iterrateur de boucle
   int estTrie; //variable booléeene qui indique si un tableau est trié ou non
@@ -76,10 +77,11 @@ void triBulle(int* tab, int n){
   printf("\n\nTri à bulle :\n");
   afficherTab(tab2, n);
   printf("temps d'execution : %f μs\n", ((float)(t2-t1)/CLOCKS_PER_SEC)*1000000);
+fprintf(fichier, "Tri par sélection;%f μs\n", ((float)(t2-t1)/CLOCKS_PER_SEC)*1000000);
   free(tab2);
 }
 
-void triInsertion(int* tab, int n){
+void triInsertion(int* tab, int n, FILE* fichier){
   int* tab2; //une copie du tableau
   int i; //iterrateur de boucle
   int j; //iterrateur de boucle
@@ -102,10 +104,11 @@ void triInsertion(int* tab, int n){
   printf("\n\nTri par insertion :\n");
   afficherTab(tab2, n);
   printf("temps d'execution : %f μs\n", ((float)(t2-t1)/CLOCKS_PER_SEC)*1000000);
+fprintf(fichier, "Tri par sélection;%f μs\n", ((float)(t2-t1)/CLOCKS_PER_SEC)*1000000);
   free(tab2);
 }
 
-void triRapide(int* tab, int n){
+void triRapide(int* tab, int n, FILE* fichier){
   int* tab2; //une copie du tableau
   clock_t t1; //temps début d'execution
   clock_t t2; //temps fin d'execution
@@ -117,6 +120,7 @@ void triRapide(int* tab, int n){
   printf("\n\nTri rapide :\n");
   afficherTab(tab2, n);
   printf("temps d'execution : %f μs\n", ((float)(t2-t1)/CLOCKS_PER_SEC)*1000000);
+fprintf(fichier, "Tri par sélection;%f μs\n", ((float)(t2-t1)/CLOCKS_PER_SEC)*1000000);
   free(tab2);
 }
 
@@ -145,7 +149,7 @@ int partitionner(int* tab, int debut, int fin){
   return(cpt);
 }
 
-void triFusion(int* tab, int n){
+void triFusion(int* tab, int n, FILE* fichier){
   int* tab2; //une copie du tableau
   clock_t t1; //temps début d'execution
   clock_t t2; //temps fin d'execution
@@ -157,6 +161,7 @@ void triFusion(int* tab, int n){
   printf("\n\nTri fusion :\n");
   afficherTab(tab2, n);
   printf("temps d'execution : %f μs\n", ((float)(t2-t1)/CLOCKS_PER_SEC)*1000000);
+fprintf(fichier, "Tri par sélection;%f μs\n", ((float)(t2-t1)/CLOCKS_PER_SEC)*1000000);
   free(tab2);
 }
 
@@ -213,7 +218,7 @@ void fusionner(int* tab, int* tab1, int n1, int* tab2, int n2){
   }
 }
 
-void trisShell(int* tab, int n){
+void trisShell(int* tab, int n, FILE* fichier){
   int intervalle;
   int i; //parcours le tab2leau
   int j;
@@ -246,5 +251,6 @@ void trisShell(int* tab, int n){
   printf("\n\nTri shell :\n");
   afficherTab(tab2, n);
   printf("temps d'execution : %f μs\n", ((float)(t2-t1)/CLOCKS_PER_SEC)*1000000);
+fprintf(fichier, "Tri par sélection;%f μs\n", ((float)(t2-t1)/CLOCKS_PER_SEC)*1000000);
   free(tab2);
 }
