@@ -181,5 +181,8 @@ void fusionner(int* tab, int* tab1, int n1, int* tab2, int n2);
 void  echanger(int* tab, int indice1, int indice2);
 
 
+void trisShell(int* tab, int n);
+
+
 
 #endif

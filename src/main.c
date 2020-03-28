@@ -36,6 +36,7 @@ int main(void){
   triInsertion(tab, n);
   triRapide(tab, n);
   triFusion(tab, n);
+  trisShell(tab, n);
   free(tab);
   return(0);
 }

@@ -212,3 +212,39 @@ void fusionner(int* tab, int* tab1, int n1, int* tab2, int n2){
     k++;
   }
 }
+
+void trisShell(int* tab, int n){
+  int intervalle;
+  int i; //parcours le tab2leau
+  int j;
+  int valeur; //la valeur à inserer
+  int* tab2; //une copie du tableau
+  clock_t t1; //temps début d'execution
+  clock_t t2; //temps fin d'execution
+  tab2=creerTabEntier1D(n);
+  CopierTab(tab, tab2, n);
+  t1=clock();
+
+  intervalle = 1;
+  while(intervalle < n/3){
+    intervalle = intervalle * 3 + 1;
+  }
+  while(intervalle > 0){
+    for(i = intervalle; i < n; i ++){
+      valeur = tab2[i];
+      j = i;
+      while(j>intervalle -1 && tab2[j-intervalle]>=valeur){
+        tab2[j] = tab2[j-intervalle];
+        j = j - intervalle;
+      }
+      tab2[j] = valeur;
+    }
+    intervalle = (intervalle-1) / 3;
+  }
+
+  t2=clock();
+  printf("\n\nTri shell :\n");
+  afficherTab(tab2, n);
+  printf("temps d'execution : %f μs\n", ((float)(t2-t1)/CLOCKS_PER_SEC)*1000000);
+  free(tab2);
+}
